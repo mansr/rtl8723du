@@ -420,7 +420,7 @@ void rtl8723d_FirmwareSelfReset(PADAPTER padapter)
 #endif /* CONFIG_FILE_FWIMG */
 
 #ifdef CONFIG_MP_INCLUDED
-static int _WriteBTFWtoTxPktBuf8723D(
+static __maybe_unused int _WriteBTFWtoTxPktBuf8723D(
 			PADAPTER	Adapter,
 			void			*buffer,
 			u32			FwBufLen,
@@ -638,7 +638,7 @@ exit:
  * 2011.10.20 by tynli
  *   */
 void
-static SetFwBTFwPatchCmd(
+static __maybe_unused SetFwBTFwPatchCmd(
 		PADAPTER	Adapter,
 		u16		FwSize
 )
@@ -661,7 +661,7 @@ static SetFwBTFwPatchCmd(
 }
 
 void
-static SetFwBTPwrCmd(
+static __maybe_unused SetFwBTPwrCmd(
 		PADAPTER	Adapter,
 		u8	PwrIdx
 )
@@ -680,7 +680,7 @@ static SetFwBTPwrCmd(
  * 2011.10.20. by tynli.
  *   */
 int
-static _CheckWLANFwPatchBTFwReady(
+static __maybe_unused _CheckWLANFwPatchBTFwReady(
 	PADAPTER Adapter,
 	BOOLEAN bRecover
 )
@@ -738,7 +738,7 @@ static _CheckWLANFwPatchBTFwReady(
 	return ret;
 }
 
-static int ReservedPage_Compare(PADAPTER Adapter, PRT_MP_FIRMWARE pFirmware, u32 BTPatchSize)
+static __maybe_unused int ReservedPage_Compare(PADAPTER Adapter, PRT_MP_FIRMWARE pFirmware, u32 BTPatchSize)
 {
 	u8 temp, ret, lastBTsz;
 	u32 u1bTmp = 0, address_start = 0, count = 0, i = 0;

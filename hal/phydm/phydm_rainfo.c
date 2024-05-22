@@ -1722,7 +1722,7 @@ u8 phydm_rssi_lv_dec(void *dm_void, u32 rssi, u8 ratr_state)
 	return new_rssi_lv;
 }
 
-static enum phydm_qam_order phydm_get_ofdm_qam_order(void *dm_void, u8 rate_idx)
+static __maybe_unused enum phydm_qam_order phydm_get_ofdm_qam_order(void *dm_void, u8 rate_idx)
 {
 	u8 tmp_idx = rate_idx;
 	enum phydm_qam_order qam_order = PHYDM_QAM_BPSK;

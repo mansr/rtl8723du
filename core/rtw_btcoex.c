@@ -406,17 +406,17 @@ u8 rtw_btcoex_IsBtLinkExist(PADAPTER padapter)
 	return hal_btcoex_IsBtLinkExist(padapter);
 }
 
-static void rtw_btcoex_SetBtPatchVersion(PADAPTER padapter, u16 btHciVer, u16 btPatchVer)
+static __maybe_unused void rtw_btcoex_SetBtPatchVersion(PADAPTER padapter, u16 btHciVer, u16 btPatchVer)
 {
 	hal_btcoex_SetBtPatchVersion(padapter, btHciVer, btPatchVer);
 }
 
-static void rtw_btcoex_SetHciVersion(PADAPTER  padapter, u16 hciVersion)
+static __maybe_unused void rtw_btcoex_SetHciVersion(PADAPTER  padapter, u16 hciVersion)
 {
 	hal_btcoex_SetHciVersion(padapter, hciVersion);
 }
 
-static void rtw_btcoex_StackUpdateProfileInfo(void)
+static __maybe_unused void rtw_btcoex_StackUpdateProfileInfo(void)
 {
 	hal_btcoex_StackUpdateProfileInfo();
 }

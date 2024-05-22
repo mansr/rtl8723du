@@ -5123,7 +5123,7 @@ static void EXhalbtcoutsrc_periodical(PBTC_COEXIST pBtCoexist)
 	/*	halbtcoutsrc_NormalLowPower(pBtCoexist); */
 }
 
-static void EXhalbtcoutsrc_dbg_control(PBTC_COEXIST pBtCoexist, u8 opCode, u8 opLen, u8 *pData)
+static __maybe_unused void EXhalbtcoutsrc_dbg_control(PBTC_COEXIST pBtCoexist, u8 opCode, u8 opLen, u8 *pData)
 {
 	if (!halbtcoutsrc_IsBtCoexistAvailable(pBtCoexist))
 		return;

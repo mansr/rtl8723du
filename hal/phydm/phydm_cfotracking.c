@@ -166,7 +166,7 @@ static void phydm_set_atc_status(void *dm_void, boolean atc_status)
 }
 
 boolean
-static phydm_get_atc_status(void *dm_void)
+static __maybe_unused phydm_get_atc_status(void *dm_void)
 {
 	boolean atc_status = false;
 	struct dm_struct *dm = (struct dm_struct *)dm_void;

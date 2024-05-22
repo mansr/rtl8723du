@@ -4847,7 +4847,7 @@ void rtw_hal_set_input_gpio(_adapter *padapter, u8 index)
 
 #endif
 
-static void rtw_hal_set_FwAoacRsvdPage_cmd(PADAPTER padapter, PRSVDPAGE_LOC rsvdpageloc)
+static __maybe_unused void rtw_hal_set_FwAoacRsvdPage_cmd(PADAPTER padapter, PRSVDPAGE_LOC rsvdpageloc)
 {
 	struct	pwrctrl_priv *pwrpriv = adapter_to_pwrctl(padapter);
 	struct	mlme_priv *pmlmepriv = &padapter->mlmepriv;

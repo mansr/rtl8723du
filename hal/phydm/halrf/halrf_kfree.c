@@ -565,7 +565,7 @@ static void phydm_set_kfree_to_rf_8710b(void *dm_void, u8 e_rf_path, u8 data)
 			      BIT(15) | BIT(14))), e_rf_path);
 }
 
-static void phydm_clear_kfree_to_rf_8710b(void *dm_void, u8 e_rf_path, u8 data)
+static __maybe_unused void phydm_clear_kfree_to_rf_8710b(void *dm_void, u8 e_rf_path, u8 data)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 gain_bmask = (BIT(18) | BIT(17) | BIT(16) | BIT(15) | BIT(14));
@@ -2144,7 +2144,7 @@ static void phydm_get_set_power_trim_offset_8721d(void *dm_void)
 	}
 }
 
-static void phydm_get_set_pa_bias_offset_8721d(void *dm_void)
+static __maybe_unused void phydm_get_set_pa_bias_offset_8721d(void *dm_void)
 {
 #if 0
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -2893,7 +2893,7 @@ static s8 phydm_get_tssi_trim_de_8814b(void *dm_void, u8 path)
 	return power_trim_info->tssi_trim[group][path];
 }
 
-static void phydm_set_pabias_bandedge_2g_rf_8814b(void *dm_void)
+static __maybe_unused void phydm_set_pabias_bandedge_2g_rf_8814b(void *dm_void)
 {
 #if 0
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3024,7 +3024,7 @@ static void phydm_set_pabias_bandedge_2g_rf_8814b(void *dm_void)
 #endif
 }
 
-static void phydm_set_pabias_bandedge_5g_rf_8814b(void *dm_void)
+static __maybe_unused void phydm_set_pabias_bandedge_5g_rf_8814b(void *dm_void)
 {
 #if 0
 	struct dm_struct *dm = (struct dm_struct *)dm_void;

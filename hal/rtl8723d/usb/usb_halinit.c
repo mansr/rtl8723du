@@ -923,7 +923,7 @@ HwSuspendModeEnable(
 }   /* HwSuspendModeEnable */
 #endif
 
-static rt_rf_power_state RfOnOffDetect(PADAPTER padapter)
+static __maybe_unused rt_rf_power_state RfOnOffDetect(PADAPTER padapter)
 {
 	/* HAL_DATA_TYPE *pHalData = GET_HAL_DATA(padapter); */
 	u8 val8;

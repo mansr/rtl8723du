@@ -653,7 +653,7 @@ phydm_evm_2_percent(s8 value)
 	return (u8)ret_val;
 }
 
-static s8 phydm_cck_rssi_convert(struct dm_struct *dm, u16 lna_idx, u8 vga_idx)
+static __maybe_unused s8 phydm_cck_rssi_convert(struct dm_struct *dm, u16 lna_idx, u8 vga_idx)
 {
 	/*@phydm_get_cck_rssi_table_from_reg*/
 	return (dm->cck_lna_gain_table[lna_idx] - (vga_idx << 1));
@@ -1247,7 +1247,7 @@ void phydm_reset_rssi_for_dm(struct dm_struct *dm, u8 station_id)
 
 #if (ODM_IC_11N_SERIES_SUPPORT || ODM_IC_11AC_SERIES_SUPPORT)
 
-static s32 phydm_get_rssi_8814_ofdm(struct dm_struct *dm, u8 *rssi_in)
+static __maybe_unused s32 phydm_get_rssi_8814_ofdm(struct dm_struct *dm, u8 *rssi_in)
 {
 	s32 rssi_avg;
 	u8 rx_count = 0;
@@ -2494,7 +2494,7 @@ phydm_query_is_mu_api(struct dm_struct *phydm, u8 ppdu_idx, u8 *p_data_rate,
 	return is_mu;
 }
 
-static void phydm_print_phy_sts_jgr2(struct dm_struct *dm, u8 *phy_status_inf,
+static __maybe_unused void phydm_print_phy_sts_jgr2(struct dm_struct *dm, u8 *phy_status_inf,
 			      struct phydm_perpkt_info_struct *pktinfo,
 			      struct phydm_phyinfo_struct *phy_info)
 {

@@ -4469,7 +4469,7 @@ static int netdev_close(struct net_device *pnetdev)
 
 }
 
-static int pm_netdev_close(struct net_device *pnetdev, u8 bnormal)
+static __maybe_unused int pm_netdev_close(struct net_device *pnetdev, u8 bnormal)
 {
 	int status = 0;
 

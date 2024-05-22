@@ -1875,7 +1875,7 @@ static void _phy_path_b_stand_by_8723d(struct dm_struct *dm)
 	odm_set_bb_reg(dm, R_0xe28, 0xffffff00, 0x808000);
 }
 
-static void _phy_pi_mode_switch_8723d(struct dm_struct *dm, boolean pi_mode)
+static __maybe_unused void _phy_pi_mode_switch_8723d(struct dm_struct *dm, boolean pi_mode)
 {
 	u32 mode;
 

@@ -502,7 +502,7 @@ static void rtw_2g_channels_init(struct ieee80211_channel *channels)
 	_rtw_memcpy((void *)channels, (void *)rtw_2ghz_channels, sizeof(rtw_2ghz_channels));
 }
 
-static void rtw_5g_channels_init(struct ieee80211_channel *channels)
+static __maybe_unused void rtw_5g_channels_init(struct ieee80211_channel *channels)
 {
 	_rtw_memcpy((void *)channels, (void *)rtw_5ghz_a_channels, sizeof(rtw_5ghz_a_channels));
 }
@@ -514,7 +514,7 @@ static void rtw_2g_rates_init(struct ieee80211_rate *rates)
 	);
 }
 
-static void rtw_5g_rates_init(struct ieee80211_rate *rates)
+static __maybe_unused void rtw_5g_rates_init(struct ieee80211_rate *rates)
 {
 	_rtw_memcpy(rates, rtw_a_rates,
 		sizeof(struct ieee80211_rate) * RTW_A_RATES_NUM

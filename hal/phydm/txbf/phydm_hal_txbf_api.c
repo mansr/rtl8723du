@@ -665,7 +665,7 @@ void phydm_txbf_80p80_rfmode(void *dm_void, u8 su_bfee_cnt, u8 mu_bfee_cnt)
 #endif
 #endif /*PHYSTS_3RD_TYPE_IC*/
 
-static void phydm_txbf_avoid_hang(void *dm_void)
+static __maybe_unused void phydm_txbf_avoid_hang(void *dm_void)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	

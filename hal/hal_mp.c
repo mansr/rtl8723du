@@ -57,7 +57,7 @@
 #endif /* !RTW_HALMAC */
 
 
-static u8 MgntQuery_NssTxRate(u16 Rate)
+static __maybe_unused u8 MgntQuery_NssTxRate(u16 Rate)
 {
 	u8	NssNum = RF_TX_NUM_NONIMPLEMENT;
 

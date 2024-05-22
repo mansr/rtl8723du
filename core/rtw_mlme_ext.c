@@ -3577,7 +3577,7 @@ unsigned int OnAtim(_adapter *padapter, union recv_frame *precv_frame)
 	return _SUCCESS;
 }
 
-static unsigned int on_action_spct_ch_switch(_adapter *padapter, struct sta_info *psta, u8 *ies, uint ies_len)
+static __maybe_unused unsigned int on_action_spct_ch_switch(_adapter *padapter, struct sta_info *psta, u8 *ies, uint ies_len)
 {
 	unsigned int ret = _FAIL;
 	struct mlme_ext_priv *mlmeext = &padapter->mlmeextpriv;
@@ -12580,7 +12580,7 @@ When station does not receive any packet in MAX_CONTINUAL_NORXPACKET_COUNT*2 sec
 recipient station will teardown the block ack by issuing DELBA frame.
 
 *********************************************************************/
-static void rtw_delba_check(_adapter *padapter, struct sta_info *psta, u8 from_timer)
+static __maybe_unused void rtw_delba_check(_adapter *padapter, struct sta_info *psta, u8 from_timer)
 {
 	int	i = 0;
 	int ret = _SUCCESS;

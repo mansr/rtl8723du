@@ -4245,7 +4245,7 @@ static struct xmit_frame *get_one_xmitframe(struct xmit_priv *pxmitpriv, struct 
 	return pxmitframe;
 }
 
-static struct xmit_frame *rtw_get_xframe(struct xmit_priv *pxmitpriv, int *num_frame)
+static __maybe_unused struct xmit_frame *rtw_get_xframe(struct xmit_priv *pxmitpriv, int *num_frame)
 {
 	_irqL irqL0;
 	_list *sta_plist, *sta_phead;

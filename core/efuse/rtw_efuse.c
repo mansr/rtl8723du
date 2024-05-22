@@ -57,7 +57,7 @@ BOOLEAN rtw_file_efuse_IsMasked(PADAPTER pAdapter, u16 Offset, u8 *maskbuf)
 	return (result > 0) ? 0 : 1;
 }
 
-static BOOLEAN efuse_IsBT_Masked(PADAPTER pAdapter, u16 Offset)
+static __maybe_unused BOOLEAN efuse_IsBT_Masked(PADAPTER pAdapter, u16 Offset)
 {
 	PHAL_DATA_TYPE pHalData = GET_HAL_DATA(pAdapter);
 

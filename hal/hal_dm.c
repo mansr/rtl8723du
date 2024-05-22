@@ -17,7 +17,7 @@
 #include <hal_data.h>
 
 /* A mapping from HalData to ODM. */
-static enum odm_board_type boardType(u8 InterfaceSel)
+static __maybe_unused enum odm_board_type boardType(u8 InterfaceSel)
 {
 	enum odm_board_type        board	= ODM_BOARD_DEFAULT;
 
@@ -131,7 +131,7 @@ static void rtw_phydm_iqk_trigger_all(_adapter *adapter)
 			(RTL8723F_SUPPORT == 1) */
 }
 
-static void rtw_phydm_iqk_trigger_dbg(_adapter *adapter, bool recovery, bool clear, bool segment)
+static __maybe_unused void rtw_phydm_iqk_trigger_dbg(_adapter *adapter, bool recovery, bool clear, bool segment)
 {
 	struct dm_struct *p_dm_odm = adapter_to_phydm(adapter);
 
@@ -141,7 +141,7 @@ static void rtw_phydm_iqk_trigger_dbg(_adapter *adapter, bool recovery, bool cle
 		halrf_iqk_trigger(p_dm_odm, recovery);
 #endif
 }
-static void rtw_phydm_lck_trigger(_adapter *adapter)
+static __maybe_unused void rtw_phydm_lck_trigger(_adapter *adapter)
 {
 	struct dm_struct *p_dm_odm = adapter_to_phydm(adapter);
 

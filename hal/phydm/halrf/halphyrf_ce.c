@@ -1117,7 +1117,7 @@ u8 odm_get_right_chnl_place_for_iqk(u8 chnl)
 }
 #endif
 
-static void odm_iq_calibrate(struct dm_struct *dm)
+static __maybe_unused void odm_iq_calibrate(struct dm_struct *dm)
 {
 	void *adapter = dm->adapter;
 	struct dm_iqk_info *iqk_info = &dm->IQK_info;

@@ -244,7 +244,7 @@ static void phydm_fa_threshold_check(void *dm_void, boolean is_dfs_band)
 		  dig_t->fa_th[1], dig_t->fa_th[2]);
 }
 
-static void phydm_set_big_jump_step(void *dm_void, u8 curr_igi)
+static __maybe_unused void phydm_set_big_jump_step(void *dm_void, u8 curr_igi)
 {
 #if (RTL8822B_SUPPORT || RTL8197F_SUPPORT || RTL8192F_SUPPORT)
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
