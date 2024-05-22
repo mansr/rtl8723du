@@ -74,7 +74,7 @@ static BOOLEAN HalUsbSetQueuePipeMapping8723DUsb(
 	return result;
 }
 
-void rtl8723du_interface_configure(
+static void rtl8723du_interface_configure(
 	PADAPTER padapter
 )
 {
@@ -294,7 +294,7 @@ static void _InitTRxBufferBoundary(PADAPTER padapter)
 
 
 void
-_InitTransferPageSize_8723du(
+static _InitTransferPageSize_8723du(
 	PADAPTER padapter
 )
 {
@@ -923,7 +923,7 @@ HwSuspendModeEnable(
 }   /* HwSuspendModeEnable */
 #endif
 
-rt_rf_power_state RfOnOffDetect(PADAPTER padapter)
+static rt_rf_power_state RfOnOffDetect(PADAPTER padapter)
 {
 	/* HAL_DATA_TYPE *pHalData = GET_HAL_DATA(padapter); */
 	u8 val8;
@@ -942,7 +942,7 @@ rt_rf_power_state RfOnOffDetect(PADAPTER padapter)
 	return rfpowerstate;
 }   /* HalDetectPwrDownMode */
 
-void _InitBBRegBackup_8723du(PADAPTER padapter)
+static void _InitBBRegBackup_8723du(PADAPTER padapter)
 {
 	HAL_DATA_TYPE *pHalData = GET_HAL_DATA(padapter);
 
@@ -974,7 +974,7 @@ void _InitBBRegBackup_8723du(PADAPTER padapter)
 #endif
 }
 
-u32 rtl8723du_hal_init(PADAPTER padapter)
+static u32 rtl8723du_hal_init(PADAPTER padapter)
 {
 	u8 value8 = 0, u1bRegCR;
 	u32 status = _SUCCESS;
@@ -1604,7 +1604,7 @@ static void rtl8723du_hw_power_down(PADAPTER padapter)
  * First created by tynli. 2011.01.28.
  */
 void
-CardDisableRTL8723du(
+static CardDisableRTL8723du(
 	PADAPTER padapter
 )
 {
@@ -1645,7 +1645,7 @@ CardDisableRTL8723du(
 }
 
 
-u32 rtl8723du_hal_deinit(PADAPTER padapter)
+static u32 rtl8723du_hal_deinit(PADAPTER padapter)
 {
 	PHAL_DATA_TYPE pHalData = GET_HAL_DATA(padapter);
 	struct pwrctrl_priv *pwrctl = adapter_to_pwrctl(padapter);
@@ -1683,7 +1683,7 @@ u32 rtl8723du_hal_deinit(PADAPTER padapter)
 }
 
 
-unsigned int rtl8723du_inirp_init(PADAPTER padapter)
+static unsigned int rtl8723du_inirp_init(PADAPTER padapter)
 {
 	struct registry_priv *regsty = adapter_to_regsty(padapter);
 	u8 i;
@@ -1738,7 +1738,7 @@ exit:
 
 }
 
-unsigned int rtl8723du_inirp_deinit(PADAPTER padapter)
+static unsigned int rtl8723du_inirp_deinit(PADAPTER padapter)
 {
 #ifdef CONFIG_USB_INTERRUPT_IN_PIPE
 	u32(*_read_interrupt)(struct intf_hdl *pintfhdl, u32 addr);
@@ -1973,7 +1973,7 @@ _ReadRFType(PADAPTER padapter)
  *    PASSIVE_LEVEL
  */
 void
-hal_EfuseCellSel(PADAPTER padapter)
+static hal_EfuseCellSel(PADAPTER padapter)
 {
 	u32 value32;
 
@@ -2022,7 +2022,7 @@ static void rtl8723du_trigger_gpio_0(PADAPTER padapter)
  * If variable not handled here,
  * some variables will be processed in SetHwReg8723A()
  */
-u8 SetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
+static u8 SetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
 {
 	PHAL_DATA_TYPE pHalData = GET_HAL_DATA(padapter);
 	u8 ret = _SUCCESS;
@@ -2150,7 +2150,7 @@ u8 SetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
  * If variable not handled here,
  * some variables will be processed in GetHwReg8723A()
  */
-void GetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
+static void GetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
 {
 	PHAL_DATA_TYPE pHalData = GET_HAL_DATA(padapter);
 
@@ -2168,7 +2168,7 @@ void GetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
  * Query setting of specified variable.
  */
 u8
-GetHalDefVar8723du(
+static GetHalDefVar8723du(
 	PADAPTER padapter,
 	HAL_DEF_VARIABLE eVariable,
 	void *pValue
@@ -2212,7 +2212,7 @@ GetHalDefVar8723du(
  * Change default setting of specified variable.
  */
 u8
-SetHalDefVar8723du(
+static SetHalDefVar8723du(
 	PADAPTER padapter,
 	HAL_DEF_VARIABLE eVariable,
 	void *pValue

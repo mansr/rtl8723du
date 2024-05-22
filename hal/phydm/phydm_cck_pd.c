@@ -153,7 +153,7 @@ void phydm_cckpd_type1(void *dm_void)
 #endif /*#ifdef PHYDM_COMPILE_CCKPD_TYPE1*/
 
 #ifdef PHYDM_COMPILE_CCKPD_TYPE2
-void phydm_write_cck_pd_type2(void *dm_void, u8 cca_th, u8 cca_th_aaa)
+static void phydm_write_cck_pd_type2(void *dm_void, u8 cca_th, u8 cca_th_aaa)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct phydm_cckpd_struct *cckpd_t = &dm->dm_cckpd_table;
@@ -167,7 +167,7 @@ void phydm_write_cck_pd_type2(void *dm_void, u8 cca_th, u8 cca_th_aaa)
 	cckpd_t->cck_cca_th_aaa = cca_th_aaa;
 }
 
-void phydm_set_cckpd_lv_type2(void *dm_void, enum cckpd_lv lv)
+static void phydm_set_cckpd_lv_type2(void *dm_void, enum cckpd_lv lv)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct phydm_cckpd_struct *cckpd_t = &dm->dm_cckpd_table;
@@ -316,7 +316,7 @@ void phydm_set_cckpd_lv_type2_bcn(void *dm_void, enum cckpd_lv lv)
 }
 #endif
 
-void phydm_cckpd_type2(void *dm_void)
+static void phydm_cckpd_type2(void *dm_void)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct phydm_dig_struct *dig_t = &dm->dm_dig_table;
@@ -1599,7 +1599,7 @@ void phydm_set_cckpd_val(void *dm_void, u32 *val_buf, u8 val_len)
 }
 
 boolean
-phydm_stop_cck_pd_th(void *dm_void)
+static phydm_stop_cck_pd_th(void *dm_void)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 

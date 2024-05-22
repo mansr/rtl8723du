@@ -23,7 +23,7 @@
  *		It toggle off LED and schedule corresponding timer if necessary.
  *   */
 void
-SwLedBlink(
+static SwLedBlink(
 	PLED_USB			pLed
 )
 {
@@ -109,7 +109,7 @@ SwLedBlink(
 }
 
 void
-SwLedBlink1(
+static SwLedBlink1(
 	PLED_USB			pLed
 )
 {
@@ -286,7 +286,7 @@ SwLedBlink1(
 }
 
 void
-SwLedBlink2(
+static SwLedBlink2(
 	PLED_USB			pLed
 )
 {
@@ -372,7 +372,7 @@ SwLedBlink2(
 }
 
 void
-SwLedBlink3(
+static SwLedBlink3(
 	PLED_USB			pLed
 )
 {
@@ -498,7 +498,7 @@ SwLedBlink3(
 
 
 void
-SwLedBlink4(
+static SwLedBlink4(
 	PLED_USB			pLed
 )
 {
@@ -690,7 +690,7 @@ SwLedBlink4(
 }
 
 void
-SwLedBlink5(
+static SwLedBlink5(
 	PLED_USB			pLed
 )
 {
@@ -780,7 +780,7 @@ SwLedBlink5(
 }
 
 void
-SwLedBlink6(
+static SwLedBlink6(
 	PLED_USB			pLed
 )
 {
@@ -798,7 +798,7 @@ SwLedBlink6(
 }
 
 void
-SwLedBlink7(
+static SwLedBlink7(
 	PLED_USB			pLed
 )
 {
@@ -887,7 +887,7 @@ SwLedBlink7(
 }
 
 void
-SwLedBlink8(
+static SwLedBlink8(
 	PLED_USB			pLed
 )
 {
@@ -905,7 +905,7 @@ SwLedBlink8(
 
 /* page added for Belkin AC950. 20120813 */
 void
-SwLedBlink9(
+static SwLedBlink9(
 	PLED_USB			pLed
 )
 {
@@ -1141,7 +1141,7 @@ SwLedBlink9(
 
 /* page added for Netgear A6200V2. 20120827 */
 void
-SwLedBlink10(
+static SwLedBlink10(
 	PLED_USB			pLed
 )
 {
@@ -1341,7 +1341,7 @@ SwLedBlink10(
 }
 
 void
-SwLedBlink11(
+static SwLedBlink11(
 	PLED_USB			pLed
 )
 {
@@ -1412,7 +1412,7 @@ SwLedBlink11(
 }
 
 void
-SwLedBlink12(
+static SwLedBlink12(
 	PLED_USB			pLed
 )
 {
@@ -1480,7 +1480,7 @@ SwLedBlink12(
 }
 
 void
-SwLedBlink13(
+static SwLedBlink13(
 	PLED_USB			pLed
 )
 {
@@ -1541,7 +1541,7 @@ SwLedBlink13(
 }
 
 void
-SwLedBlink14(
+static SwLedBlink14(
 	PLED_USB			pLed
 )
 {
@@ -1598,7 +1598,7 @@ SwLedBlink14(
 }
 
 void
-SwLedBlink15(
+static SwLedBlink15(
 	PLED_USB			pLed
 )
 {
@@ -2909,7 +2909,7 @@ SwLedControlMode6(
 
 /* Netgear, added by sinda, 2011/11/11 */
 void
-SwLedControlMode7(
+static SwLedControlMode7(
 	PADAPTER			 Adapter,
 	LED_CTL_MODE		 LedAction
 )
@@ -3048,7 +3048,7 @@ SwLedControlMode7(
 }
 
 void
-SwLedControlMode8(
+static SwLedControlMode8(
 	PADAPTER			Adapter,
 	LED_CTL_MODE		LedAction
 )
@@ -3085,7 +3085,7 @@ SwLedControlMode8(
 
 /* page added for Belkin AC950, 20120813 */
 void
-SwLedControlMode9(
+static SwLedControlMode9(
 		PADAPTER			Adapter,
 		LED_CTL_MODE		LedAction
 )
@@ -3387,7 +3387,7 @@ SwLedControlMode9(
 
 /* page added for Netgear A6200V2, 20120827 */
 void
-SwLedControlMode10(
+static SwLedControlMode10(
 	PADAPTER			Adapter,
 	LED_CTL_MODE		LedAction
 )
@@ -3585,7 +3585,7 @@ SwLedControlMode10(
 
 /* Edimax-ASUS, added by Page, 20121221 */
 void
-SwLedControlMode11(
+static SwLedControlMode11(
 	PADAPTER			Adapter,
 	LED_CTL_MODE		LedAction
 )
@@ -3684,7 +3684,7 @@ SwLedControlMode11(
 /* page added for NEC */
 
 void
-SwLedControlMode12(
+static SwLedControlMode12(
 	PADAPTER			Adapter,
 	LED_CTL_MODE		LedAction
 )
@@ -3765,7 +3765,7 @@ SwLedControlMode12(
 /* Maddest add for NETGEAR R6100 */
 
 void
-SwLedControlMode13(
+static SwLedControlMode13(
 		PADAPTER			Adapter,
 		LED_CTL_MODE		LedAction
 )
@@ -3911,7 +3911,7 @@ SwLedControlMode13(
 /* Maddest add for DNI Buffalo */
 
 void
-SwLedControlMode14(
+static SwLedControlMode14(
 		PADAPTER			Adapter,
 		LED_CTL_MODE		LedAction
 )
@@ -3970,7 +3970,7 @@ SwLedControlMode14(
 /* Maddest add for Dlink */
 
 void
-SwLedControlMode15(
+static SwLedControlMode15(
 		PADAPTER			Adapter,
 		LED_CTL_MODE		LedAction
 )

@@ -329,12 +329,12 @@ static const struct chplan_ent_t RTW_ChannelPlanMap[] = {
 
 const int RTW_ChannelPlanMap_size = sizeof(RTW_ChannelPlanMap) / sizeof(RTW_ChannelPlanMap[0]);
 
-u8 rtw_chplan_get_default_regd_2g(u8 id)
+static u8 rtw_chplan_get_default_regd_2g(u8 id)
 {
 	return RTW_ChannelPlanMap[id].regd_2g;
 }
 
-u8 rtw_chplan_get_default_regd_5g(u8 id)
+static u8 rtw_chplan_get_default_regd_5g(u8 id)
 {
 #if CONFIG_IEEE80211_BAND_5GHZ
 	return RTW_ChannelPlanMap[id].regd_5g;

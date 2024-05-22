@@ -1074,7 +1074,7 @@ static void rtw_regsty_load_tx_ac_lifetime(struct registry_priv *regsty)
 }
 #endif
 
-void rtw_regsty_load_target_tx_power(struct registry_priv *regsty)
+static void rtw_regsty_load_target_tx_power(struct registry_priv *regsty)
 {
 	int path, rs;
 	int *target_tx_pwr;
@@ -1686,7 +1686,7 @@ static struct net_device_stats *rtw_net_get_stats(struct net_device *pnetdev)
 static const u16 rtw_1d_to_queue[8] = { 2, 3, 3, 2, 1, 1, 0, 0 };
 
 /* Given a data frame determine the 802.1p/1d tag to use. */
-unsigned int rtw_classify8021d(struct sk_buff *skb)
+static unsigned int rtw_classify8021d(struct sk_buff *skb)
 {
 	unsigned int dscp;
 
@@ -1822,7 +1822,7 @@ void rtw_ndev_notifier_unregister(void)
 	unregister_netdevice_notifier(&rtw_ndev_notifier);
 }
 
-int rtw_ndev_init(struct net_device *dev)
+static int rtw_ndev_init(struct net_device *dev)
 {
 	_adapter *adapter = rtw_netdev_priv(dev);
 
@@ -1835,7 +1835,7 @@ int rtw_ndev_init(struct net_device *dev)
 	return 0;
 }
 
-void rtw_ndev_uninit(struct net_device *dev)
+static void rtw_ndev_uninit(struct net_device *dev)
 {
 	_adapter *adapter = rtw_netdev_priv(dev);
 
@@ -1895,7 +1895,7 @@ int rtw_init_netdev_name(struct net_device *pnetdev, const char *ifname)
 	return 0;
 }
 
-void rtw_hook_if_ops(struct net_device *ndev)
+static void rtw_hook_if_ops(struct net_device *ndev)
 {
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 29))
 	ndev->netdev_ops = &rtw_netdev_ops;
@@ -1977,7 +1977,7 @@ struct net_device *rtw_init_netdev(_adapter *old_padapter)
 	return pnetdev;
 }
 
-int rtw_os_ndev_alloc(_adapter *adapter)
+static int rtw_os_ndev_alloc(_adapter *adapter)
 {
 	int ret = _FAIL;
 	struct net_device *ndev = NULL;
@@ -2132,7 +2132,7 @@ static const struct ethtool_ops rtw_ethtool_ops = {
 #endif /* CONFIG_IOCTL_CFG80211 */
 /* For ethtool --- */
 
-int rtw_os_ndev_register(_adapter *adapter, const char *name)
+static int rtw_os_ndev_register(_adapter *adapter, const char *name)
 {
 	struct dvobj_priv *dvobj = adapter_to_dvobj(adapter);
 	int ret = _SUCCESS;
@@ -2282,7 +2282,7 @@ void rtw_os_ndev_deinit(_adapter *adapter)
 	rtw_os_ndev_free(adapter);
 }
 
-int rtw_os_ndevs_alloc(struct dvobj_priv *dvobj)
+static int rtw_os_ndevs_alloc(struct dvobj_priv *dvobj)
 {
 	int i, status = _SUCCESS;
 	_adapter *adapter;
@@ -2334,7 +2334,7 @@ int rtw_os_ndevs_alloc(struct dvobj_priv *dvobj)
 	return status;
 }
 
-void rtw_os_ndevs_free(struct dvobj_priv *dvobj)
+static void rtw_os_ndevs_free(struct dvobj_priv *dvobj)
 {
 	int i;
 	_adapter *adapter = NULL;
@@ -2466,7 +2466,7 @@ void rtw_stop_drv_threads(_adapter *padapter)
 	rtw_hal_stop_thread(padapter);
 }
 
-u8 rtw_init_default_value(_adapter *padapter)
+static u8 rtw_init_default_value(_adapter *padapter)
 {
 	u8 ret  = _SUCCESS;
 	struct registry_priv *pregistrypriv = &padapter->registrypriv;
@@ -3710,7 +3710,7 @@ void rtw_inetaddr_notifier_unregister(void)
 #endif
 }
 
-int rtw_os_ndevs_register(struct dvobj_priv *dvobj)
+static int rtw_os_ndevs_register(struct dvobj_priv *dvobj)
 {
 	int i, status = _SUCCESS;
 	struct registry_priv *regsty = dvobj_to_regsty(dvobj);
@@ -4148,7 +4148,7 @@ int netdev_open(struct net_device *pnetdev)
 }
 
 #ifdef CONFIG_IPS
-int  ips_netdrv_open(_adapter *padapter)
+static int  ips_netdrv_open(_adapter *padapter)
 {
 	int status = _SUCCESS;
 	/* struct pwrctrl_priv	*pwrpriv = adapter_to_pwrctl(padapter); */
@@ -4341,7 +4341,7 @@ int _mi_pm_netdev_open(struct net_device *pnetdev)
 	return status;
 }
 #endif /*CONFIG_NEW_NETDEV_HDL*/
-int pm_netdev_open(struct net_device *pnetdev, u8 bnormal)
+static int pm_netdev_open(struct net_device *pnetdev, u8 bnormal)
 {
 	int status = 0;
 
@@ -4469,7 +4469,7 @@ static int netdev_close(struct net_device *pnetdev)
 
 }
 
-int pm_netdev_close(struct net_device *pnetdev, u8 bnormal)
+static int pm_netdev_close(struct net_device *pnetdev, u8 bnormal)
 {
 	int status = 0;
 
@@ -5153,7 +5153,7 @@ int rtw_suspend_ap_wow(_adapter *padapter)
 #endif /* CONFIG_AP_WOWLAN */
 
 
-int rtw_suspend_normal(_adapter *padapter)
+static int rtw_suspend_normal(_adapter *padapter)
 {
 	int ret = _SUCCESS;
 
@@ -5566,7 +5566,7 @@ exit:
 }
 #endif /* #ifdef CONFIG_APWOWLAN */
 
-void rtw_mi_resume_process_normal(_adapter *padapter)
+static void rtw_mi_resume_process_normal(_adapter *padapter)
 {
 	int i;
 	_adapter *iface;
@@ -5599,7 +5599,7 @@ void rtw_mi_resume_process_normal(_adapter *padapter)
 	}
 }
 
-int rtw_resume_process_normal(_adapter *padapter)
+static int rtw_resume_process_normal(_adapter *padapter)
 {
 	struct net_device *pnetdev;
 	struct pwrctrl_priv *pwrpriv;

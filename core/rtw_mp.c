@@ -1764,7 +1764,7 @@ void fill_tx_desc_8188gtv(PADAPTER padapter)
 #endif
 
 #if defined(CONFIG_RTL8723D)
-void fill_tx_desc_8723d(PADAPTER padapter)
+static void fill_tx_desc_8723d(PADAPTER padapter)
 {
 	struct mp_priv *pmp_priv = &padapter->mppriv;
 	struct pkt_attrib *pattrib = &(pmp_priv->tx.attrib);

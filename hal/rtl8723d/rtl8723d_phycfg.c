@@ -770,7 +770,7 @@ PHY_SetTxPowerLevel8723D(
 
 /* <20160217, Jessica> A workaround to eliminate the 2472MHz & 2484MHz spur of 8723D. */
 void
-phy_SpurCalibration_8723D(
+static phy_SpurCalibration_8723D(
 		PADAPTER					pAdapter,
 		u8						ToChannel,
 		u8						threshold
@@ -858,7 +858,7 @@ phy_SpurCalibration_8723D(
 }
 
 void
-phy_SetRegBW_8723D(
+static phy_SetRegBW_8723D(
 		PADAPTER		Adapter,
 	enum channel_width	CurrentBW
 )
@@ -889,7 +889,7 @@ phy_SetRegBW_8723D(
 }
 
 u8
-phy_GetSecondaryChnl_8723D(
+static phy_GetSecondaryChnl_8723D(
 		PADAPTER	Adapter
 )
 {
@@ -925,7 +925,7 @@ phy_GetSecondaryChnl_8723D(
 }
 
 void
-phy_PostSetBwMode8723D(
+static phy_PostSetBwMode8723D(
 		PADAPTER padapter
 )
 {
@@ -979,7 +979,7 @@ phy_PostSetBwMode8723D(
 }
 
 void
-phy_SwChnl8723D(
+static phy_SwChnl8723D(
 		PADAPTER					pAdapter
 )
 {
@@ -1024,7 +1024,7 @@ phy_SwChnl8723D(
 }
 
 void
-phy_SwChnlAndSetBwMode8723D(
+static phy_SwChnlAndSetBwMode8723D(
 		PADAPTER		Adapter
 )
 {
@@ -1066,7 +1066,7 @@ phy_SwChnlAndSetBwMode8723D(
 }
 
 void
-PHY_HandleSwChnlAndSetBW8723D(
+static PHY_HandleSwChnlAndSetBW8723D(
 		PADAPTER			Adapter,
 		BOOLEAN				bSwitchChannel,
 		BOOLEAN				bSetBandWidth,

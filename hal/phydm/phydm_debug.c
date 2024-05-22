@@ -101,7 +101,7 @@ void phydm_bb_dbg_port_header_sel(void *dm_void, u32 header_idx)
 	}
 }
 
-void phydm_bb_dbg_port_clock_en(void *dm_void, u8 enable)
+static void phydm_bb_dbg_port_clock_en(void *dm_void, u8 enable)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 reg_value = 0;
@@ -183,7 +183,7 @@ u32 phydm_get_bb_dbg_port_val(void *dm_void)
 
 #ifdef CONFIG_PHYDM_DEBUG_FUNCTION
 #if (ODM_IC_11N_SERIES_SUPPORT)
-void phydm_bb_hw_dbg_info_n(void *dm_void, u32 *_used, char *output,
+static void phydm_bb_hw_dbg_info_n(void *dm_void, u32 *_used, char *output,
 			    u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -944,7 +944,7 @@ u8 phydm_get_l_sig_rate(void *dm_void, u8 rate_idx_l_sig)
 	return rate_idx;
 }
 
-void phydm_bb_hw_dbg_info(void *dm_void, char input[][16], u32 *_used,
+static void phydm_bb_hw_dbg_info(void *dm_void, char input[][16], u32 *_used,
 			  char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -1789,7 +1789,7 @@ void phydm_rx_rate_distribution(void *dm_void)
 #endif
 }
 
-u16 phydm_rx_utility(void *dm_void, u16 avg_phy_rate, u8 rx_max_ss,
+static u16 phydm_rx_utility(void *dm_void, u16 avg_phy_rate, u8 rx_max_ss,
 		     enum channel_width bw)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -1886,7 +1886,7 @@ u16 phydm_rx_avg_phy_rate(void *dm_void)
 	return avg_phy_rate;
 }
 
-void phydm_print_hist_2_buf(void *dm_void, u16 *val, u16 len, char *buf,
+static void phydm_print_hist_2_buf(void *dm_void, u16 *val, u16 len, char *buf,
 			    u16 buf_size)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -1906,7 +1906,7 @@ void phydm_print_hist_2_buf(void *dm_void, u16 *val, u16 len, char *buf,
 	}
 }
 
-void phydm_nss_hitogram(void *dm_void, enum PDM_RATE_TYPE rate_type)
+static void phydm_nss_hitogram(void *dm_void, enum PDM_RATE_TYPE rate_type)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct odm_phy_dbg_info *dbg_i = &dm->phy_dbg_info;
@@ -2041,7 +2041,7 @@ void phydm_show_phy_hitogram(void *dm_void)
 	#endif
 }
 
-void phydm_avg_phy_val_nss(void *dm_void, u8 nss)
+static void phydm_avg_phy_val_nss(void *dm_void, u8 nss)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct odm_phy_dbg_info *dbg_i = &dm->phy_dbg_info;
@@ -2314,7 +2314,7 @@ void phydm_get_phy_statistic(void *dm_void)
 	phydm_reset_phystatus_statistic(dm);
 };
 
-void phydm_basic_dbg_msg_linked(void *dm_void)
+static void phydm_basic_dbg_msg_linked(void *dm_void)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct phydm_cfo_track_struct *cfo_t = &dm->dm_cfo_track;
@@ -3062,7 +3062,7 @@ void phydm_fw_trace_en_h2c(void *dm_void, boolean enable,
 	odm_fill_h2c_cmd(dm, PHYDM_H2C_FW_TRACE_EN, cmd_length, h2c_parameter);
 }
 
-void phydm_get_per_path_txagc(void *dm_void, u8 path, u32 *_used, char *output,
+static void phydm_get_per_path_txagc(void *dm_void, u8 path, u32 *_used, char *output,
 			      u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3136,7 +3136,7 @@ void phydm_get_per_path_txagc(void *dm_void, u8 path, u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_get_txagc(void *dm_void, u32 *_used, char *output, u32 *_out_len)
+static void phydm_get_txagc(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 used = *_used;
@@ -3169,7 +3169,7 @@ void phydm_get_txagc(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 	*_out_len = out_len;
 }
 
-void phydm_set_txagc(void *dm_void, u32 *const val, u32 *_used,
+static void phydm_set_txagc(void *dm_void, u32 *const val, u32 *_used,
 		     char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3253,7 +3253,7 @@ void phydm_set_txagc(void *dm_void, u32 *const val, u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_shift_txagc(void *dm_void, u32 *const val, u32 *_used, char *output,
+static void phydm_shift_txagc(void *dm_void, u32 *const val, u32 *_used, char *output,
 		       u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3367,7 +3367,7 @@ void phydm_shift_txagc(void *dm_void, u32 *const val, u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_set_txagc_dbg(void *dm_void, char input[][16], u32 *_used,
+static void phydm_set_txagc_dbg(void *dm_void, char input[][16], u32 *_used,
 			 char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3448,7 +3448,7 @@ void phydm_set_txagc_dbg(void *dm_void, char input[][16], u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_cmn_msg_setting(void *dm_void, u32 *val, u32 *_used,
+static void phydm_cmn_msg_setting(void *dm_void, u32 *val, u32 *_used,
 			   char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3475,7 +3475,7 @@ void phydm_cmn_msg_setting(void *dm_void, u32 *val, u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_debug_trace(void *dm_void, char input[][16], u32 *_used,
+static void phydm_debug_trace(void *dm_void, char input[][16], u32 *_used,
 		       char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3623,7 +3623,7 @@ void phydm_debug_trace(void *dm_void, char input[][16], u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_fw_debug_trace(void *dm_void, char input[][16], u32 *_used,
+static void phydm_fw_debug_trace(void *dm_void, char input[][16], u32 *_used,
 			  char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -3680,7 +3680,7 @@ void phydm_fw_debug_trace(void *dm_void, char input[][16], u32 *_used,
 }
 
 #if (ODM_IC_11N_SERIES_SUPPORT)
-void phydm_dump_bb_reg_n(void *dm_void, u32 *_used, char *output, u32 *_out_len)
+static void phydm_dump_bb_reg_n(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 addr = 0;
@@ -3963,7 +3963,7 @@ void phydm_get_csi_table_jgr3(void *dm_void, u32 *_used, char *output,
 
 #endif
 
-void phydm_dump_bb_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
+static void phydm_dump_bb_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 used = *_used;
@@ -4001,7 +4001,7 @@ void phydm_dump_bb_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 	*_out_len = out_len;
 }
 
-void phydm_dump_rf_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
+static void phydm_dump_rf_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 addr = 0;
@@ -4065,7 +4065,7 @@ void phydm_dump_rf_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 	*_out_len = out_len;
 }
 
-void phydm_dump_mac_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
+static void phydm_dump_mac_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	u32 addr = 0;
@@ -4090,7 +4090,7 @@ void phydm_dump_mac_reg(void *dm_void, u32 *_used, char *output, u32 *_out_len)
 	*_out_len = out_len;
 }
 
-void phydm_dump_reg(void *dm_void, char input[][16], u32 *_used, char *output,
+static void phydm_dump_reg(void *dm_void, char input[][16], u32 *_used, char *output,
 		    u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4137,7 +4137,7 @@ void phydm_dump_reg(void *dm_void, char input[][16], u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_enable_big_jump(void *dm_void, char input[][16], u32 *_used,
+static void phydm_enable_big_jump(void *dm_void, char input[][16], u32 *_used,
 			   char *output, u32 *_out_len)
 {
 #if (RTL8822B_SUPPORT)
@@ -4174,7 +4174,7 @@ void phydm_enable_big_jump(void *dm_void, char input[][16], u32 *_used,
 #endif
 }
 
-void phydm_show_rx_rate(void *dm_void, char input[][16], u32 *_used,
+static void phydm_show_rx_rate(void *dm_void, char input[][16], u32 *_used,
 			char *output, u32 *_out_len)
 {
 #if (RTL8822B_SUPPORT || RTL8821C_SUPPORT || RTL8814B_SUPPORT ||\
@@ -4260,7 +4260,7 @@ void phydm_show_rx_rate(void *dm_void, char input[][16], u32 *_used,
 #endif
 }
 
-void phydm_per_tone_evm(void *dm_void, char input[][16], u32 *_used,
+static void phydm_per_tone_evm(void *dm_void, char input[][16], u32 *_used,
 			char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4472,7 +4472,7 @@ void phydm_per_tone_evm(void *dm_void, char input[][16], u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_bw_ch_adjust(void *dm_void, char input[][16],
+static void phydm_bw_ch_adjust(void *dm_void, char input[][16],
 			u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4523,7 +4523,7 @@ out:
 	*_out_len = out_len;
 }
 
-void phydm_ext_rf_element_ctrl(void *dm_void, char input[][16], u32 *_used,
+static void phydm_ext_rf_element_ctrl(void *dm_void, char input[][16], u32 *_used,
 			       char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4543,7 +4543,7 @@ void phydm_ext_rf_element_ctrl(void *dm_void, char input[][16], u32 *_used,
 	}
 }
 
-void phydm_print_dbgport(void *dm_void, char input[][16], u32 *_used,
+static void phydm_print_dbgport(void *dm_void, char input[][16], u32 *_used,
 			 char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4591,7 +4591,7 @@ out:
 	*_out_len = out_len;
 }
 
-void phydm_get_anapar_table(void *dm_void, u32 *_used, char *output,
+static void phydm_get_anapar_table(void *dm_void, u32 *_used, char *output,
 			    u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4614,7 +4614,7 @@ void phydm_get_anapar_table(void *dm_void, u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_get_csi_table(void *dm_void, u32 *_used, char *output,
+static void phydm_get_csi_table(void *dm_void, u32 *_used, char *output,
 			    u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4635,7 +4635,7 @@ void phydm_get_csi_table(void *dm_void, u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_dd_dbg_dump(void *dm_void, char input[][16], u32 *_used,
+static void phydm_dd_dbg_dump(void *dm_void, char input[][16], u32 *_used,
 		       char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4669,7 +4669,7 @@ void phydm_dd_dbg_dump(void *dm_void, char input[][16], u32 *_used,
 	}
 }
 
-void phydm_nss_hitogram_mp(void *dm_void, enum PDM_RATE_TYPE rate_type,
+static void phydm_nss_hitogram_mp(void *dm_void, enum PDM_RATE_TYPE rate_type,
 			   u32 *_used, char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4733,7 +4733,7 @@ void phydm_nss_hitogram_mp(void *dm_void, enum PDM_RATE_TYPE rate_type,
 	*_out_len = out_len;
 }
 
-void phydm_mp_dbg(void *dm_void, char input[][16], u32 *_used, char *output,
+static void phydm_mp_dbg(void *dm_void, char input[][16], u32 *_used, char *output,
 		  u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -4964,7 +4964,7 @@ void phydm_mp_dbg(void *dm_void, char input[][16], u32 *_used, char *output,
 	*_out_len = out_len;
 }
 
-void phydm_reg_monitor(void *dm_void, char input[][16], u32 *_used,
+static void phydm_reg_monitor(void *dm_void, char input[][16], u32 *_used,
 		       char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -5027,7 +5027,7 @@ u16 phydm_get_agc_rf_gain(void *dm_void, boolean is_mod, u8 tab, u8 mp_gain_i)
 }
 #endif
 
-void phydm_get_rxagc_table_dbg(void *dm_void, char input[][16], u32 *_used,
+static void phydm_get_rxagc_table_dbg(void *dm_void, char input[][16], u32 *_used,
 			       char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
@@ -5086,7 +5086,7 @@ void phydm_get_rxagc_table_dbg(void *dm_void, char input[][16], u32 *_used,
 	*_out_len = out_len;
 }
 
-void phydm_shift_rxagc_table_dbg(void *dm_void, char input[][16], u32 *_used,
+static void phydm_shift_rxagc_table_dbg(void *dm_void, char input[][16], u32 *_used,
 				 char *output, u32 *_out_len)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;

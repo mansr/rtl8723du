@@ -77,7 +77,7 @@ void rtl8723du_free_xmit_priv(PADAPTER padapter)
 {
 }
 
-int urb_zero_packet_chk(PADAPTER padapter, int sz)
+static int urb_zero_packet_chk(PADAPTER padapter, int sz)
 {
 	u8 blnSetTxDescOffset;
 	HAL_DATA_TYPE *pHalData = GET_HAL_DATA(padapter);

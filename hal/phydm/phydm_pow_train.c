@@ -31,7 +31,7 @@
 #include "phydm_precomp.h"
 
 #ifdef PHYDM_POWER_TRAINING_SUPPORT
-void phydm_reset_pt_para(void *dm_void)
+static void phydm_reset_pt_para(void *dm_void)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct phydm_pow_train_stuc *pt_t = &dm->pow_train_table;
