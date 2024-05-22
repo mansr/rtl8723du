@@ -98,6 +98,7 @@ void rtl8723du_set_hw_type(struct dvobj_priv *pdvobj);
 void rtl8723du_set_intf_ops(struct _io_ops *pops);
 void rtl8723du_recv_tasklet(void *priv);
 void rtl8723du_xmit_tasklet(void *priv);
+int recvbuf2recvframe(PADAPTER padapter, void *ptr);
 #ifdef CONFIG_SUPPORT_USB_INT
 void interrupt_handler_8723du(_adapter *padapter, u16 pkt_len, u8 *pbuf);
 #endif /* CONFIG_SUPPORT_USB_INT */

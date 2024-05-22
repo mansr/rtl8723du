@@ -3974,7 +3974,6 @@ if (!adapter_use_wds(adapter)) {
 #endif /* (LINUX_VERSION_CODE <= KERNEL_VERSION(2, 6, 35)) */
 		&& (check_fwstate(pmlmepriv, WIFI_STATION_STATE | WIFI_ADHOC_STATE) == _TRUE)) {
 		/* expire NAT2.5 entry */
-		void nat25_db_expire(_adapter *priv);
 		nat25_db_expire(adapter);
 
 		if (adapter->pppoe_connection_in_progress > 0)

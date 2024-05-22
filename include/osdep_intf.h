@@ -140,4 +140,10 @@ int rtw_gw_addr_query(_adapter *padapter);
 int rtw_suspend_common(_adapter *padapter);
 int rtw_resume_common(_adapter *padapter);
 
+void rtw_indicate_wx_assoc_event(_adapter *padapter);
+void rtw_indicate_wx_disassoc_event(_adapter *padapter);
+void indicate_wx_scan_complete_event(_adapter *padapter);
+
+void netdev_br_init(struct net_device *netdev);
+
 #endif /* _OSDEP_INTF_H_ */
