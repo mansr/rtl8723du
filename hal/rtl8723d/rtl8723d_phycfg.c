@@ -769,8 +769,7 @@ PHY_SetTxPowerLevel8723D(
 }
 
 /* <20160217, Jessica> A workaround to eliminate the 2472MHz & 2484MHz spur of 8723D. */
-void
-static phy_SpurCalibration_8723D(
+static void phy_SpurCalibration_8723D(
 		PADAPTER					pAdapter,
 		u8						ToChannel,
 		u8						threshold
@@ -857,8 +856,7 @@ static phy_SpurCalibration_8723D(
 	odm_set_bb_reg(pDM_Odm, 0xD2C, BIT(28), 0x0);                    /* disable CSI mask */
 }
 
-void
-static phy_SetRegBW_8723D(
+static void phy_SetRegBW_8723D(
 		PADAPTER		Adapter,
 	enum channel_width	CurrentBW
 )
@@ -888,8 +886,7 @@ static phy_SetRegBW_8723D(
 	}
 }
 
-u8
-static phy_GetSecondaryChnl_8723D(
+static u8 phy_GetSecondaryChnl_8723D(
 		PADAPTER	Adapter
 )
 {
@@ -924,8 +921,7 @@ static phy_GetSecondaryChnl_8723D(
 	return (SCSettingOf40 << 4) | SCSettingOf20;
 }
 
-void
-static phy_PostSetBwMode8723D(
+static void phy_PostSetBwMode8723D(
 		PADAPTER padapter
 )
 {
@@ -978,8 +974,7 @@ static phy_PostSetBwMode8723D(
 	PHY_RF6052SetBandwidth8723D(padapter, pHalData->current_channel_bw);
 }
 
-void
-static phy_SwChnl8723D(
+static void phy_SwChnl8723D(
 		PADAPTER					pAdapter
 )
 {
@@ -1023,8 +1018,7 @@ static phy_SwChnl8723D(
 	RTW_DBG("===>phy_SwChnl8723D: Channel = %d\n", channelToSW);
 }
 
-void
-static phy_SwChnlAndSetBwMode8723D(
+static void phy_SwChnlAndSetBwMode8723D(
 		PADAPTER		Adapter
 )
 {
@@ -1065,8 +1059,7 @@ static phy_SwChnlAndSetBwMode8723D(
 	rtw_hal_set_tx_power_level(Adapter, pHalData->current_channel);
 }
 
-void
-static PHY_HandleSwChnlAndSetBW8723D(
+static void PHY_HandleSwChnlAndSetBW8723D(
 		PADAPTER			Adapter,
 		BOOLEAN				bSwitchChannel,
 		BOOLEAN				bSetBandWidth,

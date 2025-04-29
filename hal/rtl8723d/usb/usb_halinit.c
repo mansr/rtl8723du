@@ -293,8 +293,7 @@ static void _InitTRxBufferBoundary(PADAPTER padapter)
 }
 
 
-void
-static _InitTransferPageSize_8723du(
+static void _InitTransferPageSize_8723du(
 	PADAPTER padapter
 )
 {
@@ -1603,8 +1602,7 @@ static void rtl8723du_hw_power_down(PADAPTER padapter)
  * Description: RTL8723e card disable power sequence v003 which suggested by Scott.
  * First created by tynli. 2011.01.28.
  */
-void
-static CardDisableRTL8723du(
+static void CardDisableRTL8723du(
 	PADAPTER padapter
 )
 {
@@ -1972,8 +1970,7 @@ _ReadRFType(PADAPTER padapter)
  * Assumption:
  *    PASSIVE_LEVEL
  */
-void
-static hal_EfuseCellSel(PADAPTER padapter)
+static void hal_EfuseCellSel(PADAPTER padapter)
 {
 	u32 value32;
 
@@ -2167,8 +2164,7 @@ static void GetHwReg8723du(PADAPTER padapter, u8 variable, u8 *val)
  * Description:
  * Query setting of specified variable.
  */
-u8
-static GetHalDefVar8723du(
+static u8 GetHalDefVar8723du(
 	PADAPTER padapter,
 	HAL_DEF_VARIABLE eVariable,
 	void *pValue
@@ -2211,8 +2207,7 @@ static GetHalDefVar8723du(
  * Description:
  * Change default setting of specified variable.
  */
-u8
-static SetHalDefVar8723du(
+static u8 SetHalDefVar8723du(
 	PADAPTER padapter,
 	HAL_DEF_VARIABLE eVariable,
 	void *pValue

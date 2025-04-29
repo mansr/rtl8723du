@@ -423,8 +423,7 @@ static void mpt_SetTxPower_Old(PADAPTER pAdapter, MPT_TXPWR_DEF Rate, u8 *pTxPow
 	RTW_INFO("<===mpt_SetTxPower_Old()\n");
 }
 
-void
-static mpt_SetTxPower(
+static void mpt_SetTxPower(
 	PADAPTER		pAdapter,
 	MPT_TXPWR_DEF	Rate,
 	u8 *pTxPower

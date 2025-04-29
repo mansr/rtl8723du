@@ -2114,8 +2114,7 @@ PHY_GetRateValuesOfTxPowerByRate(
 	};
 }
 
-void
-static PHY_StoreTxPowerByRateNew(
+static void PHY_StoreTxPowerByRateNew(
 		PADAPTER	pAdapter,
 		u32			Band,
 		u32			RfPath,
@@ -3500,8 +3499,7 @@ static void phy_txpwr_lmt_post_hdl(_adapter *adapter)
 	_exit_critical_mutex(&rfctl->txpwr_lmt_mutex, &irqL);
 }
 
-BOOLEAN
-static GetS1ByteIntegerFromStringInDecimal(
+static BOOLEAN GetS1ByteIntegerFromStringInDecimal(
 			char	*str,
 			s8		*val
 )
@@ -4609,8 +4607,7 @@ phy_ConfigBBWithParaFile(
 	return rtStatus;
 }
 
-void
-static phy_DecryptBBPgParaFile(
+static void phy_DecryptBBPgParaFile(
 	PADAPTER		Adapter,
 	char			*buffer
 )
@@ -4651,8 +4648,7 @@ static phy_DecryptBBPgParaFile(
 #define DBG_TXPWR_BY_RATE_FILE_PARSE 0
 #endif
 
-int
-static phy_ParseBBPgParaFile(
+static int phy_ParseBBPgParaFile(
 	PADAPTER		Adapter,
 	char			*buffer
 )
@@ -5083,8 +5079,7 @@ PHY_ConfigRFWithParaFile(
 	return rtStatus;
 }
 
-void
-static initDeltaSwingIndexTables(
+static void initDeltaSwingIndexTables(
 	PADAPTER	Adapter,
 	char		*Band,
 	char		*Path,

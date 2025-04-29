@@ -637,8 +637,7 @@ exit:
  * Description: Determine the contents of H2C BT_FW_PATCH Command sent to FW.
  * 2011.10.20 by tynli
  *   */
-void
-static __maybe_unused SetFwBTFwPatchCmd(
+static void __maybe_unused SetFwBTFwPatchCmd(
 		PADAPTER	Adapter,
 		u16		FwSize
 )
@@ -660,8 +659,7 @@ static __maybe_unused SetFwBTFwPatchCmd(
 
 }
 
-void
-static __maybe_unused SetFwBTPwrCmd(
+static void __maybe_unused SetFwBTPwrCmd(
 		PADAPTER	Adapter,
 		u8	PwrIdx
 )
@@ -679,8 +677,7 @@ static __maybe_unused SetFwBTPwrCmd(
  *
  * 2011.10.20. by tynli.
  *   */
-int
-static __maybe_unused _CheckWLANFwPatchBTFwReady(
+static int __maybe_unused _CheckWLANFwPatchBTFwReady(
 	PADAPTER Adapter,
 	BOOLEAN bRecover
 )
